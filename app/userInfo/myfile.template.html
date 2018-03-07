@@ -1,0 +1,42 @@
+<div id="userInfo" class="col-md-12" xmlns="http://www.w3.org/1999/html">
+    <div class="col-md-6" style="margin-left: 15%">
+        <div class="info_tilte">
+            <a ng-src="#"><span>{{name}}</span></a>的个人空间
+        </div>
+        <div class="Card userinfo">
+            <div class="hd">
+                <h4 class="name" style="float: left">Ta的资料</h4>
+                <span style="margin-left: 10px" id="person" ng-click="userinfo()" ui-sref="userInfo({'username':name})">个人信息</span>
+                <span class="line">|</span>
+                <span style="margin-left: 10px" id="subject" ng-click="toggleArticle()" ui-sref="myarticle({'username':name})">主题</span>
+                <span class="line">|</span>
+                <span id="reply" style="margin-left: 10px" ng-click="toggleReply()" ui-sref="myreply({'username':name})">回复</span>
+                <span class="line">|</span>
+                <span id="file" style="margin-left: 10px" ng-click="toggleFile()" ui-sref="myfile({'username':name})">我的文件</span>
+            </div>
+
+
+            <div id="myfile" class="myarticle">
+                <table width="100%" class="userinfotab">
+                    <thead class="thead">
+                    <tr>
+                        <td class="subject"style="width: 40%">文件名称</td>
+                        <td class="time">上传时间</td>
+                        <td class="num" style="width: 30%">下载次数／人气</td>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr ng-repeat="file in shows track by $index" ng-show="file!=undefined">
+                        <td class="subject"><a href="#/shareDetail/{{file._id}}">{{file.title}}</a></td>
+                        <td class="time">{{file.created_at| date:"yyyy/MM/dd h:mm a"}}</td>
+                        <td class="num" >{{file.download_times}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+    </div>
+</div>

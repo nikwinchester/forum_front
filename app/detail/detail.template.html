@@ -1,0 +1,139 @@
+<div class="container animated fadeIn">
+    <div class="margin-navbar"></div>
+
+    <div class="col-md-8" style="margin-bottom: 10px">
+
+
+        <div class="Card ForumItem">
+
+            <div>
+                <div class="topic-user pull-right">
+                    <img class="avatar avatar-small" ng-src="{{topic.user_img}}">
+                    <a ui-sref="userInfo({'username':topic.username})">{{topic.username}}</a>
+                </div>
+
+                <div class="topic-title pull-left">
+                    {{topic.title}}
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="topic-content ql-editor" id="topic-content" ng-bind-html="topic.content" style="min-height: 20px">
+
+
+            </div>
+
+            <div class="font14 note-color">
+                <div class="pull-left">
+
+
+                    <a href="" class="note-color">
+                        评论{{comments.length}}
+                    </a> • 浏览{{topic.visit}} &nbsp;
+
+                    <a href="" class="small-tag">{{topic.category}}</a>
+
+                    <a ng-show="topic.username==username" ng-click="openTopicEditor(topic)" class="note-color">编辑</a>
+                </div>
+                <div class="pull-right">
+                    发表于 {{getDateDiff(topic.created_at,nowTime)}} 分钟前
+
+                </div>
+                <div class="clearfix">
+                </div>
+            </div>
+        </div>
+
+        <div class="Card topic-comment-container">
+            <div class="topic-comment-item" ng-repeat="comment in comments">
+                <img class="pull-left avatar avatar-small" ng-src="{{comment.user_img}}">
+                <div class="pull-right" style="text-align:right">
+                    <p class="badge">{{$index}}楼</p>
+                    <p ng-show="comment.username==username" style="cursor: pointer;">
+                        <a class="note-color" ng-click="editComment(comment)">编辑</a>•
+                        <a class="note-color" ng-click="deleteComment(comment.c_id)">删除</a>
+                    </p>
+                </div>
+                <div class="topic-comment-main">
+                    <div>
+                        <span><a class="topic-comment-username" ui-sref="userInfo({'username':comment.username})">{{comment.username}}</a>:</span>
+                        <span class="topic-comment-time"><small>{{getDateDiff(comment.created_at,nowTime)}}分钟前</small></span>
+                    </div>
+                    <div id="topic-comment-inner-container" ng-bind-html="comment.comment" style="min-height: 20px">
+
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="Card" style="padding:0 10px 10px 10px">
+            <div>
+                <h2 ng-show="status.edit===false">发表回复</h2>
+                <h2 ng-show="status.edit===true">修改回复</h2>
+            </div>
+            <div id="topic-new-toolbar">
+
+<span class="ql-formats">
+<select class="ql-font">
+<option selected=""></option>
+<option value="serif"></option>
+<option value="monospace"></option>
+</select>
+<select class="ql-size">
+<option value="small"></option>
+<option selected=""></option>
+<option value="large"></option>
+<option value="huge"></option>
+</select>
+</span>
+                <span class="ql-formats">
+<button class="ql-bold"></button>
+<button class="ql-italic"></button>
+<button class="ql-underline"></button>
+<button class="ql-strike"></button>
+</span>
+                <span class="ql-formats">
+<select class="ql-color"></select>
+<select class="ql-background"></select>
+</span>
+                <span class="ql-formats">
+<button class="ql-list" value="ordered"></button>
+<button class="ql-list" value="bullet"></button>
+<select class="ql-align">
+<option selected=""></option>
+<option value="center"></option>
+<option value="right"></option>
+<option value="justify"></option>
+</select>
+</span>
+                <span class="ql-formats">
+<button class="ql-link"></button>
+<button class="ql-image"></button>
+</span>
+
+            </div>
+            <div id="topic-new-editor" style="height: 200px;"></div>
+
+            <div style="text-align:center; margin-top: 10px">
+                <input ng-show="status.edit===false" class="btn btn-default" type="button" ng-click="submitComment()"
+                       value="发表回复">
+                <div ng-show="status.edit===true">
+                    <input class="btn btn-primary" type="button" ng-click="submitComment()" value="提交">
+                    <input class="btn btn-default" type="button" ng-click="status.edit=false" value="取消">
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-md-4 my-navbar-right" ng-include="infoSideBarTemplate">
+
+
+    </div>
+
+
+</div>

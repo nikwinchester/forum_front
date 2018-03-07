@@ -1,0 +1,65 @@
+
+
+
+.share-upload-button{
+    height: 24.4px;
+    cursor: pointer;
+    -webkit-appearance: none;
+    font-size: 12px;
+    line-height: 22.4px;
+    padding: 0 19.2px;
+    transition-duration: .3s;
+    color: #FFF;
+    border: none;
+    margin-top: 5px;
+    background-color: #0f88eb;;
+}
+.share-upload-button:hover{
+    background-color: #196999;
+}
+
+.tit{
+    font-size: 120%;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #e7eaf1;
+    margin-bottom: 10px;
+}
+.share p{
+    margin-top: -3px;
+}
+
+.share,.classify,.recommend{
+    margin-bottom: 10px;
+    background-color: #fff;
+    border: 1px solid #e7eaf1;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0, 37, 55, 0.05);
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.classify{
+    padding-bottom: 0;
+}
+.sharetxt{
+    margin-bottom: 8px;
+}
+
+.liktit{
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e7eaf1;
+    margin-bottom: 10px;
+    height:25px;
+    overflow: hidden;
+}
+
+.endtit{
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+}
+
+.recommendZ{
+    border-bottom: solid #e7eaf1 1px;
+    min-height: 150px;
+    margin-top: 8px;
+}

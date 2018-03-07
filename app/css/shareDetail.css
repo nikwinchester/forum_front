@@ -1,0 +1,80 @@
+
+.shareDetailContainer{
+    padding-top: 20px;
+}
+
+.btn-download{
+    /*height: 150px;
+    cursor: pointer;
+    -webkit-appearance: none;
+    font-size: 12px;
+    line-height: 22.4px;
+    padding: 0 19.2px;
+    transition-duration: .3s;
+    background: #E54028;
+    color: #FFF;
+    border: none;*/
+    height: 24.4px;
+    font-size: 12px;
+    background-color: #337ab7;
+    padding: 5px 19.2px;
+    float: right;
+    margin-left: 5px;
+}
+
+.sharingtitle{
+    margin: 8px auto 8px 8px;
+    color: #999;
+}
+
+.sharingfloat{
+    float: right;
+}
+
+.bar{
+    margin: 0;
+}
+
+.title{
+    background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
+    margin: 0 0 5px 0;
+    padding: 7.5px 10px;
+    font-family: 'Helvetica Neue',Helvetica,Arial,Sans-serif;
+    font-size: 13px;
+    color: #545454;
+    height: 30px;
+}
+
+.praise, .interesting{
+    background-color: #FFFFFF;
+    margin: 20px;
+    margin-left: 5px;
+    margin-top: 0px;
+    padding: 0 0 8px 0;
+}
+
+.sharing, .bar{
+    display: block;
+
+}
+
+.praise{
+    min-height: 150px;
+}
+
+.interesting{
+    min-height: 250px;
+}
+
+.sharing{
+    background-color: #fff;
+    margin-bottom: 20px;
+    height:220px;
+    padding-top: 15px;
+}
+
+.share-detial-download{
+    position:absolute;
+    right: 20px;
+    bottom: 20px;
+}

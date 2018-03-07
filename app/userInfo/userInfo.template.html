@@ -1,0 +1,92 @@
+<div id="userInfo" class="col-md-12 animated fadeIn">
+    <div class="col-md-6" style="margin-left: 15%">
+        <div class="info_tilte">
+            <a ng-src="#"><span>{{name}}</span></a>的个人空间
+        </div>
+        <div class="Card userinfo">
+            <div class="hd">
+                <h4 class="name" style="float: left">Ta的资料</h4>
+                <span style="margin-left: 10px" id="person" ng-click="userinfo()" ui-sref="userInfo({'username':name})">个人信息</span>
+                <span class="line">|</span>
+                <span style="margin-left: 10px" id="subject" ng-click="toggleArticle()" ui-sref="myarticle({'username':name})">主题</span>
+                <span class="line">|</span>
+                <span id="reply" style="margin-left: 10px" ng-click="toggleReply()" ui-sref="myreply({'username':name})">回复</span>
+                <span class="line">|</span>
+                <span id="file" style="margin-left: 10px" ng-click="toggleFile()" ui-sref="myfile({'username':name})">我的文件</span>
+            </div>
+
+
+            <div id="myinfo"   class="myarticle">
+                <div id="info">基本资料
+                    <div id="update" class="btn-update" ng-show="loginname== name ">
+                        <button type="submit" class="btn btn-primary" value="update" ng-click="toggle()">编辑</button>
+                    </div>
+                </div>
+                <div class="photo">
+                    <img id="img" ng-src="{{user.user_img}}" height="150px" width="150px">
+                    <input  type="file" ng-show="!visible" class="upt" id="inp" accept=".jpg,.jpeg,.png,.bmp" onchange="postImg(this)">
+
+                </div>
+                <div class="infocontent">
+                    <table class="users userinfotab" ng-show="visible">
+                        <tr>
+                            <td>用户名</td>
+                            <td>{{user.username}}</td>
+                        </tr>
+                        <tr>
+                            <td>性别</td>
+                            <td>{{user.gender}}</td>
+                        </tr>
+
+                        <tr>
+                            <td>员工姓名</td>
+                            <td>{{user.realname}}</td>
+                        </tr>
+                        <tr>
+                            <td>个性签名</td>
+                            <td>{{user.sign}}</td>
+                        </tr>
+
+                        <tr>
+                            <td>注册日期</td>
+                            <td>{{user.created_at| date:"yyyy/MM/dd h:mm a"}}</td>
+                        </tr>
+                    </table>
+                    <form class="userform" ng-show="!visible">
+                        <div class="form-group">
+                            <label for="username">用户名</label>
+                            <input id="username" class="form-control" style="float: left" type="text"
+                                   ng-model="user.username">
+                        </div>
+                        <div class="form-group">
+                            <label>性别</label>
+                            <select class="form-control" ng-model="user.gender">
+                                <option>男</option>
+                                <option>女</option>
+                            </select>
+
+                        </div>
+                        <div class="form-group">
+                            <label for="realname">员工姓名</label>
+                            <input id="realname" class="form-control" ng-model="user.realname">
+                        </div>
+                        <div class="form-group">
+                            <label for="sign">个性签名</label>
+                            <input id="sign" class="form-control" ng-model="user.sign">
+                        </div>
+
+                        <div class="form-group btns" style="text-align: center">
+
+                            <button type="submit" class="btn btn-primary" value="submit" ng-click="update()">提交</button>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <button type="submit" class="btn btn-default" value="cancel" ng-click="cancel()">取消</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+
+        </div>
+      </div>
+</div>

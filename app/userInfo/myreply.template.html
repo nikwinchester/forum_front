@@ -1,0 +1,42 @@
+<div id="userInfo" class="col-md-12" xmlns="http://www.w3.org/1999/html">
+    <div class="col-md-6" style="margin-left: 15%">
+        <div class="info_tilte">
+            <a ng-src="#"><span>{{name}}</span></a>的个人空间
+        </div>
+        <div class="Card userinfo">
+            <div class="hd">
+                <h4 class="name" style="float: left">Ta的资料</h4>
+                <span style="margin-left: 10px" id="person" ng-click="userinfo()" ui-sref="userInfo({'username':name})">个人信息</span>
+                <span class="line">|</span>
+                <span style="margin-left: 10px" id="subject" ng-click="toggleArticle()" ui-sref="myarticle({'username':name})">主题</span>
+                <span class="line">|</span>
+                <span id="reply" style="margin-left: 10px" ng-click="toggleReply()" ui-sref="myreply({'username':name})">回复</span>
+                <span class="line">|</span>
+                <span id="file" style="margin-left: 10px" ng-click="toggleFile()" ui-sref="myfile({'username':name})">我的文件</span>
+            </div>
+
+
+            <div id="myreply"   class="myarticle">
+                <div class="reply fontcolor">
+                    <div class="subject" style="float: left">帖子标题</div>
+                    <div class="time">发布时间</div>
+                </div>
+
+                <div class="reply" ng-repeat="reply in shows track by $index" ng-show="reply!=undefined">
+
+                    <div class="subject">
+                        <a href="#/userInfo/{{reply.username}}" style="float: left">{{reply.username}} :</a>
+                        <a href="#/detail/{{reply.f_id}}" style="color:mediumblue;font-weight: 500;">{{reply.forum.title}}</a>
+                    </div>
+                    <div class="time" style="float: right">{{reply.created_at| date:"yyyy/MM/dd h:mm a"}}</div>
+                    <div class="comment" >
+                        <div style="float: left"> >>> &nbsp;&nbsp;&nbsp; </div>
+                        <div ng-bind-html="reply.comment"> </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,72 @@
+<div class="container share-container animated fadeIn">
+    <div class="margin-navbar"></div>
+
+
+    <div class="col-md-3 bar">
+        <div class="share">
+            <div class="tit"><strong>温馨提示</strong></div>
+            <!--<div class="sharetxt">分享你认为有价值的资源，类型不限，文件大小上限为100M。别人下载你的分享需要花费一定的金币。</div>-->
+            <p>1、单个文件不能超过100MB；</p>
+            <p>2、分享你认为有价值的资料；</p>
+            <p>3、莫要上传攻击员工的资料；</p>
+            <p>4、本论坛实名制哦，你上传的一些不雅的资料会被管理员删除；</p>
+            <p>5、将多个文件打包上传更方便哦；</p>
+            <button class="btn btn-primary share-upload-button" ng-click="openFileEditor()">上传</button>
+        </div>
+        <div class="classify">
+            <div class="tit"><strong>热门下载排行</strong></div>
+            <div class="liktit" ng-repeat="hotFile in hotFiles">
+                <a ui-sref="shareDetail({'_id':hotFile._id})">{{hotFile.title}}</a>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-md-9 recommend">
+        <div class="recommend2" >
+            <div class="tit">
+                <div style="float: right; ">
+                    <input type="text" ng-change="searchFile(search)" ng-model="search"  placeholder="根据文件标题、内容、文件名搜索..."  style="
+    width: 250px;
+    height: 34px;
+    padding: 5px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #F6F6F6;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;">
+                </div>
+                <strong>推荐</strong>
+            </div>
+
+        </div>
+        <div  class="col-md-6 recommendZ" ng-repeat="download in downloads">
+            <div style="float: left"><img style="width: 135px;height: 135px" src="images/readme.png"></div>
+            <div>
+                <div style="margin-bottom: 10px;max-height: 25px; overflow: hidden;">
+                    <div>
+                        <a style="font-size: 18px;" ui-sref="shareDetail({'_id':download._id})">{{download.title}}</a>
+                    </div>
+
+                </div>
+                <div style="overflow: hidden; height: 20px;text-overflow: ellipsis;">
+
+                    {{download.originalname}}
+
+                </div>
+
+                <div style="font-size: 12px;margin-bottom:8px ;height: 34px;overflow: hidden  ">{{download.comment}}
+                </div>
+                <div style="margin-bottom: 5px">
+                    <img style="width: 35px;height: 35px;" ng-src="{{download.user.user_img}}">
+                    <span style="margin-left: 5px" ui-sref="userInfo({'username':download.username})">{{download.username}}</span>
+                    <a ng-show="download.username===username" style="float:right;margin-top: 8px;cursor: pointer;"
+                       ng-click="openFileEditor(download)"> 编辑</a>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+    </div>
+</div>

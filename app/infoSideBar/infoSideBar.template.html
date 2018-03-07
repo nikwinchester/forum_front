@@ -1,0 +1,43 @@
+<div ng-controller="infoSideBarController" >
+
+
+
+    <div ng-show="logedIn" class="Card" style="padding: 20px;">
+        <div class="infoSideBar-user">
+            <img ng-src="{{user.user_img}}" class="avatar avatar-small">
+            <a ui-sref="userInfo({'username':user.username})"><span style="margin-top: 5px" >{{user.username}}</span></a>
+        </div>
+
+        <div ng-show="flag">这家伙很懒，还没有填写个性签名。</div>
+
+        <div>
+            {{user.sign}}
+        </div>
+
+    </div>
+
+
+    <div style="background-color: #DEDEDE; padding:9px " >
+        <div style="float: right;font-family: Arial" ><a >MORE>></a></div>
+        <div ><span style="font-size: 16px;color: #394a59;font-weight: bold;">新闻公告</span></div>
+
+    </div>
+    <div class="Card ForumItem" >
+
+
+
+        <div class="announce-item" ng-repeat="announcement in announcements">
+            <div class="topic-title">
+                {{announcement.title}}
+            </div>
+            <div class="announce-item-main">
+                {{announcement.content}}
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+
+

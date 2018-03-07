@@ -1,0 +1,91 @@
+<div class="container animated fadeIn">
+
+    <div class="margin-navbar"></div>
+
+    <div class="col-md-8" on-scroll-to-bottom="loadMore()">
+
+
+        <div class="Card ForumHeader clearfix">
+            <div class="navItems" style="display: inline;">
+                <div class="header-navItem" ng-repeat="category in categorys">
+
+                    <a style="cursor: pointer;" ng-style="category===categoryFilter &&{'color':'black'} || {'color':'grey'}" ng-click="changeCategoryFilter(category)">{{category.name}}</a>
+                </div>
+            </div>
+
+            <div style="display:inline">
+                <input   class="searchForum" type="text" ng-change="searchTopic(search)" ng-model="search"  placeholder="搜索帖子...">
+
+            </div>
+
+            <div class="pull-right">
+                <button class="Button-Blue" ng-click="openTopicEditor()">
+                    发帖
+                </button>
+            </div>
+        </div>
+
+
+
+
+
+        <button  class="btn btn-primary" ng-click="test()" style="color:#FFFFFF">测试接口</button>
+
+
+
+
+
+
+        <div class="Card ForumItem" ng-repeat="topic in topics|filter:categoryFilter['value']">
+
+            <div>
+                <div class="topic-user pull-left">
+                    <img class="avatar avatar-small" ng-src="{{topic.user_img}}">
+                    <a style="font-weight: bold" ui-sref="userInfo({'username':topic.username})">&nbsp;&nbsp;{{topic.username}}</a>
+                </div>
+                <div class="clearfix"></div>
+                <div class="topic-title pull-left ">
+                    <a ui-sref="detail({'id':topic.f_id})">{{topic.title}}</a>
+                </div>
+
+                <div class="clearfix"></div>
+            </div>
+            <div class="topic-content home-topic-content ql-editor" ng-bind-html="topic.content">
+
+            </div>
+
+            <div class="font14 note-color">
+                <div class="pull-left">
+
+                    <a  id="comment"  ui-sref="detail({'id':topic.f_id})" class="note-color">
+                        <button class="comment_button">评论&nbsp;{{topic.comment_count}} </button>
+
+                    </a>&nbsp; <button disabled class="comment_button"> 浏览&nbsp;{{topic.visit}}</button>
+
+                    &nbsp;&nbsp;&nbsp;
+                    <a href="" class="small-tag">{{topic.category}}</a>&nbsp;&nbsp;
+
+                    <a href="" ng-show="topic.username==username" ng-click="openTopicEditor(topic)" class="note-color">编辑</a>
+                </div>
+
+                <div style="margin-top: 20px;" class="pull-right">
+
+                    发表于 {{getDateDiff(topic.created_at,nowTime)}} 分钟前
+                </div>
+                <div class="clearfix">
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-bottom: 30px"></div>
+
+
+    </div>
+
+    <div   style="position: fixed; right: 8%; width: 27%"  class=" my-navbar-right" ng-include="infoSideBarTemplate">
+
+
+    </div>
+
+</div>
+

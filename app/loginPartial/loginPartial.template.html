@@ -1,0 +1,10 @@
+<div ng-controller="loginPartialController">
+    <ul class="nav navbar-nav navbar-right">
+
+        <li ng-show="!logedIn"><a href="#" style="color:#414141" ui-sref="login">登录</a></li>
+
+        <li ng-show="logedIn"><a  style="color:#414141" ui-sref="userInfo({'username':username})">{{username}}</a></li>
+
+        <li ng-show="logedIn"><a href="#" style="color:#414141" ng-click="logout()">退出</a></li>
+    </ul>
+</div>

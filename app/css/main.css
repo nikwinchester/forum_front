@@ -1,0 +1,269 @@
+body{
+    background-color: #F6F6F6;
+}
+
+.top,.nav,#bs-example-navbar-collapse-1{
+    background-color: #FFFFFF;
+    margin-bottom: -1px;
+
+}
+.top{
+    box-shadow: 0 1px 3px rgba(26,26,26,.1)
+}
+
+.card{
+    box-shadow: 0 1px 3px rgba(26,26,26,.1)
+}
+
+a{
+    color:black;
+}
+
+.Card {
+    margin-bottom: 10px;
+    background-color: #fff;
+    border: 1px solid #e7eaf1;
+
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0, 37, 55, 0.05);
+    box-sizing: border-box;
+
+}
+
+.ForumItem {
+    position: relative;
+    padding: 16px 20px;
+}
+
+.ForumHeader {
+    line-height: 58px;
+    padding: 0 20px;
+}
+
+.header-navItem {
+    margin-right: 20px;
+    font-size: 16px;
+    color: #262626;
+    display: inline;
+}
+
+.avatar {
+
+    border-radius: 2px;
+
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.22);
+}
+
+.avatar-small {
+    width: 28px;
+    height: 28px;
+}
+
+.topic-user {
+    font-size: 15px;
+    color: #555555;
+    margin-top: 5px;
+}
+
+.topic-title {
+    margin: 10px 0 7px 0;
+    font-size: 20px;
+    color: #000;
+    font-weight: 700;
+    text-decoration: none;
+
+}
+
+.topic-content {
+    color: #888888;
+
+    overflow:hidden;
+
+}
+
+.topic-content.ql-editor{
+    padding:0;
+}
+
+.home-topic-content{
+    max-height: 80px;
+}
+
+.topic-content blockquote {
+    font-size: 15px;
+}
+
+.topic-more-color {
+    color: #6C6351;
+}
+
+.font14 {
+    font-size: 14px;
+}
+
+.note-color {
+    margin-top: 10px;
+    color: #8590a6;
+}
+.comment_button{
+    height: 30px;
+    padding: 0 10px;
+    color: #0084ff;
+    background: rgba(0,132,255,.1);
+    border-color: transparent;
+    border-radius: 3px;
+}
+
+#comment{
+display: inline-block;
+}
+
+#comment:hover{
+    text-decoration: none;
+    background: rgba(0,132,255,.1);
+}
+
+.small-tag {
+    font-size: 14px;
+    background-color: #eeeeee;
+    border-radius: 3px 0 0 3px;
+    color: #999;
+    display: inline-block;
+    height: 18px;
+    line-height: 18px;
+    padding: 0 13px 0 13px;
+    position: relative;
+    margin: 0 3px 0 0;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.small-tag::before {
+    background: #fff;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);
+    content: '';
+    height: 6px;
+    left: 5px;
+    position: absolute;
+    width: 6px;
+    top: 5px;
+}
+
+.small-tag::after {
+    background: #fff;
+    border-bottom: 9px solid transparent;
+    border-left: 10px solid #eee;
+    border-top: 9px solid transparent;
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+/*detail*/
+
+.topic-comment-container {
+    margin-top: 20px;
+    padding: 0 15px;
+}
+
+.topic-comment-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.topic-comment-time {
+    margin-left: 5px;
+    color: gray;
+}
+
+.topic-comment-main {
+    margin-left: 40px;
+}
+
+.badge {
+    padding: 2px 9px;
+
+    border-radius: 9px;
+    background-color: #999999;
+    color: white;
+    line-height: 14px;
+    font-size: 12px;
+    font-weight: 700;
+
+}
+
+.topic-comment-username{
+    font-weight: 700;
+    text-decoration:none;
+}
+
+#topic-new-container{
+    margin-top:20px;
+}
+
+.active{
+    color: black;
+}
+
+.nav>li>a:focus{
+    color: #000;
+}
+.nav>li>a:hover{
+    color: #175199;
+}
+
+.Button-Blue{
+    text-align: center;
+    cursor: pointer;
+    box-sizing: border-box;
+    border-radius: 3px;
+    border: 1px solid #0f88eb;
+    transition: opacity .3s ease,transform .3s ease,-webkit-transform .3s ease;
+    line-height: 30px;
+    padding: 0 14px;
+    background: #0f88eb;
+    color: #fff;
+
+}
+
+.announce-item,.infoSideBar-user{
+    border-bottom: 1px solid #eee;
+    font-size: 16px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+.infoSideBar-user{
+    font-weight: 500;
+    line-height: 1.1;
+    font-size: 30px;
+}
+
+.announce-item-main{
+    margin-top: 5px;
+}
+
+.margin-navbar{
+    margin-bottom: 25px;
+}
+
+
+.nav-icon{
+    color:white;
+}
+.searchForum{
+    width: 200px;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #F6F6F6;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}

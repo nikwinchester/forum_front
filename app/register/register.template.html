@@ -1,0 +1,46 @@
+
+<div id="wrap">
+
+    <div id="form" style="z-index: 200;">
+        <div id="title"><h1>企业内部员工论坛</h1></div>
+    <form class="form" >
+        <div class="input-group register-username">
+            <span class="input-group-addon register-span" ><img src="images/person.png"></span>
+            <input id="username" ng-model="registerInfo.username" placeholder="username" class="form-control register-input" type="text" maxlength="20">
+            <span class="glyphicon  form-control-feedback"></span>
+        </div>
+        <div class="input-group register-inputdiv">
+            <span class="input-group-addon register-span" ><img src="images/password.png"></span>
+            <input id="password" ng-model="registerInfo.password" placeholder="password" class="form-control register-input" type="password">
+        </div>
+        <div class="input-group register-inputdiv">
+            <span class="input-group-addon register-span"><img src="images/realname.png"></span>
+            <input id="realname" ng-model="registerInfo.realname" placeholder="realname" class="form-control register-input" type="text" maxlength="20">
+        </div>
+        <div>
+
+        <div class="radio register-radio">
+                <label for="male" class="radio-inline">
+                   <input id="male" ng-model="registerInfo.gender" name="gender" type="radio" value="男"  checked>
+                    <img src="images/male.png">
+                </label>
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp</span>
+                <label for="female" class="radio-inline register-inline">
+                    <input id="female" ng-model="registerInfo.gender" name="gender" type="radio" value="女"  >
+                    <img src="images/female.png">
+                </label>
+            </div>
+        </div>
+        <button type="button" ng-click="mySubmit()" class="btn btn-primary register-submit">注 册</button>
+    </form>
+    </div>
+    <div id="ifhaslogin">
+        已有账号？<a href="#" style="color:#175199;" ui-sref="login">登录</a>
+
+    </div>
+   <!--<footer class="register-footer">-->
+       <!--<p><h6></h6></p>-->
+       <!--<p><h6></h6></p>-->
+   <!--</footer>-->
+
+</div>
